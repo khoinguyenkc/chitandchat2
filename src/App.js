@@ -46,8 +46,8 @@ function App() {
       </form>
 
       {messages.map( (msg) => { return <Message 
-      text={msg.text}
-      username={msg.username}
+      message={msg}
+      username={username}
       ></Message>})}
       {/* */}
 
