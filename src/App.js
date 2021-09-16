@@ -3,7 +3,8 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Message from './Message';
-import db from './firebase.js';
+import { db } from './firebase.js';
+import { collection, doc, getDocs } from "firebase/firestore";
 
 function App() {
   const [ input, setInput ] = useState("")
@@ -12,8 +13,14 @@ function App() {
   const [ username, setUsername ] = useState("");
   // useEffect( () => { return ( )}, [input])
 
-  useEffect( () => { 
-    console.log(db.collection('messages'))
+  useEffect( async () => { 
+    const shit = await getDocs(collection(db, "messages"))
+    shit.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+    });
+    
+    // console.log(shit)
     // db.collection('messages').onSnapshot( snapshot => { 
     //   setMessages(snapshot.docs.map( doc => doc.data() ) )
     // })
