@@ -13,7 +13,7 @@ function Message({message, username}) {
                         variant="h5"
                         component="h2"
                     >
-                                    {message.username}:{message.message}
+                                    {message.username}:{message.text}
  
                     </Typography>
                 </CardContent>
