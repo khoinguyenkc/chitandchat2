@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.app__form {
+  position: fixed;
+  bottom: 20px;
+  z-index: 1;
+  width: 100%;
+  background-color: red;
+}

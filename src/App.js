@@ -5,6 +5,7 @@ import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Message from './Message';
 import { db } from './firebase.js';
 import { collection, onSnapshot, addDoc, serverTimestamp, query, orderBy } from "firebase/firestore";
+import FlipMove from 'react-flip-move';
 
 function App() {
   const [ input, setInput ] = useState("")
@@ -18,7 +19,7 @@ function App() {
 
     onSnapshot((theMessages), (snapshot) => 
     { 
-        setMessages(snapshot.docs.map( doc => doc.data() ) )
+        setMessages(snapshot.docs.map( doc => { return ({ id: doc.id, message: doc.data() }) } ) )
       })
 
     }, [])
@@ -42,6 +43,16 @@ function App() {
   return (
     <div className="App">
       <h1>Messenger</h1>
+      <FlipMove>
+        {messages.map( (msg) => { return <Message 
+        key={msg.id}
+        message={msg.message}
+        username={username}
+      ></Message>})}
+
+      </FlipMove>
+      {/* */}
+      <div class="app__form">
       <form>
       <FormControl>
   <InputLabel>Enter a message</InputLabel>
@@ -59,11 +70,7 @@ function App() {
 </FormControl>
       </form>
 
-      {messages.map( (msg) => { return <Message 
-      message={msg}
-      username={username}
-      ></Message>})}
-      {/* */}
+      </div>
 
     </div>
   );
