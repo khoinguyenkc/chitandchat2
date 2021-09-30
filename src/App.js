@@ -57,6 +57,10 @@ function App() {
       <FormControl>
   <InputLabel>Enter a message</InputLabel>
   <Input value={input} onChange={ (event) => setInput(event.target.value)} />
+  <Input
+  {/* set a table that offer emojis. onchange should SEND, no setting input needed
+     */}/> {/* emoji input */}
+
   <Button 
         variant="outline" 
         color="primary" 
