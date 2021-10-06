@@ -45,3 +45,9 @@
   width: 100%;
   background-color: red;
 }
+
+
+.message__display__box {
+  height: 500px;
+  overflow: scroll;
+}

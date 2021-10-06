@@ -43,6 +43,7 @@ function App() {
   return (
     <div className="App">
       <h1>Messenger</h1>
+      <div class="message__display__box">
       <FlipMove>
         {messages.map( (msg) => { return <Message 
         key={msg.id}
@@ -51,15 +52,13 @@ function App() {
       ></Message>})}
 
       </FlipMove>
+      </div>
       {/* */}
       <div class="app__form">
       <form>
       <FormControl>
   <InputLabel>Enter a message</InputLabel>
   <Input value={input} onChange={ (event) => setInput(event.target.value)} />
-  <Input
-  {/* set a table that offer emojis. onchange should SEND, no setting input needed
-     */}/> {/* emoji input */}
 
   <Button 
         variant="outline" 
