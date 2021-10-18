@@ -6,6 +6,8 @@ import Message from './Message';
 import { db } from './firebase.js';
 import { collection, onSnapshot, addDoc, serverTimestamp, query, orderBy } from "firebase/firestore";
 import FlipMove from 'react-flip-move';
+import { IconButton } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 
 function App() {
   const [ input, setInput ] = useState("")
@@ -60,7 +62,16 @@ function App() {
   <InputLabel>Enter a message</InputLabel>
   <Input value={input} onChange={ (event) => setInput(event.target.value)} />
 
-  <Button 
+  <IconButton 
+  variant="outline" 
+        color="primary" 
+        disabled={!input} 
+        onClick={sendMessage} 
+        type="submit">
+    <SendIcon />
+  </IconButton>
+
+  {/* <Button 
         variant="outline" 
         color="primary" 
         disabled={!input} 
@@ -68,7 +79,7 @@ function App() {
         type="submit"
       >
         Send messages
-      </Button>
+      </Button> */}
 
 </FormControl>
       </form>
