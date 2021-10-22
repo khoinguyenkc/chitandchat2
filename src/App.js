@@ -59,8 +59,8 @@ function App() {
       <div class="app__form">
       <form>
       <FormControl>
-  <InputLabel>Enter a message</InputLabel>
-  <Input value={input} onChange={ (event) => setInput(event.target.value)} />
+  {/* <InputLabel>Enter a message</InputLabel> */}
+  <Input placeholder='Enter a message...' value={input} onChange={ (event) => setInput(event.target.value)} />
 
   <IconButton 
   variant="outline" 
