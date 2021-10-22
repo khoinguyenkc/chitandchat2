@@ -51,6 +51,13 @@
   flex-direction: row !important;
 }
 
+.app_input {
+  flex: 1;
+}
+ 
+.app_iconButton {
+  flex: 0;
+}
 .message__display__box {
   height: 500px;
   overflow: scroll;
