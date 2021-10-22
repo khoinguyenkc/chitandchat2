@@ -46,6 +46,10 @@
   background-color: red;
 }
 
+.app_formControl {
+  display: flex !important;
+  flex-direction: row !important;
+}
 
 .message__display__box {
   height: 500px;

@@ -58,7 +58,7 @@ function App() {
       {/* */}
       <div class="app__form">
       <form>
-      <FormControl>
+      <FormControl className="app_formControl">
   {/* <InputLabel>Enter a message</InputLabel> */}
   <Input placeholder='Enter a message...' value={input} onChange={ (event) => setInput(event.target.value)} />
 
